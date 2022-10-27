@@ -4,7 +4,8 @@
  */
 var groupAnagrams = function(strs) {
 	const group =  strs.reduce((acc, cur) => {
-    acc[cur.split('').sort()] = [...(acc[cur.split('').sort()] || []) , cur];
+    let letter = cur.split('').sort().join("")
+    acc[letter] = [...(acc[letter] || []) , cur];
     return acc
   }, {})
   
